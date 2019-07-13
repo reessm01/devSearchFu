@@ -84,7 +84,9 @@
             >
           </b-col>
           <b-col cols="2">
-            <b-button type="submit" variant="primary">Search</b-button>
+            <b-button type="submit" variant="primary" v-on:click="runSearch"
+              >Search</b-button
+            >
           </b-col>
         </b-row>
       </b-container>
@@ -113,6 +115,15 @@ export default {
       this.form.includes = "";
       this.form.excludes = "";
       this.form.site = "";
+    },
+    runSearch() {
+      if (this.form.tech && this.form.topic) {
+        const baseURL = "https://www.google.com/search?q=";
+        let parameters = [this.form.tech, this.form.topic]
+          .map(string => string.split(" ").join("+"))
+          .join("+");
+        window.open(baseURL + parameters);
+      }
     }
   }
 };
