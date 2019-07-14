@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/devSearchFu/js/about.498fc197.js"
   },
   {
-    "revision": "42a49a3e1a4fb4c097d4",
+    "revision": "7205c9cadb95cd387c02",
     "url": "/devSearchFu/css/app.0ff0c0bb.css"
   },
   {
-    "revision": "42a49a3e1a4fb4c097d4",
-    "url": "/devSearchFu/js/app.ccf7639f.js"
+    "revision": "7205c9cadb95cd387c02",
+    "url": "/devSearchFu/js/app.530eb158.js"
   },
   {
     "revision": "2809c4482c03f5b7a281",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/devSearchFu/img/ninja.22d5398e.png"
   },
   {
-    "revision": "2d7eb9c68cdabd61f5cc4a09513a76fc",
+    "revision": "d1a936c37701e9c83b92617b2abb6a8c",
     "url": "/devSearchFu/index.html"
   },
   {
