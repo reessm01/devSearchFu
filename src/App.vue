@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <b-navbar type="dark" variant="dark">
+      <b-navbar-brand href="/" class="mx-auto">
+        <img src="@/assets/ninja.png" class="image" />
+      </b-navbar-brand>
+      <!-- <b-navbar-nav>
+        <b-nav-item href="/about">About</b-nav-item>
+        </b-navbar-nav> -->
+    </b-navbar>
     <router-view />
   </div>
 </template>
@@ -16,14 +20,10 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+.image {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem 1rem 0.5rem 0.5rem;
 }
 </style>
