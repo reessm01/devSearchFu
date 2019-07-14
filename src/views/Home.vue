@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h5>Your search ends here...</h5>
+    <h3>Your search ends here...</h3>
     <b-container fluid>
       <b-row>
         <b-col md="7">
@@ -29,7 +29,10 @@ export default {
 </script>
 
 <style scoped>
-h5 {
-  margin: 1rem;
+.home {
+  padding: 2rem;
+}
+h3 {
+  margin-bottom: 2rem;
 }
 </style>

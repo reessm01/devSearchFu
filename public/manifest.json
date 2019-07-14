@@ -11,6 +11,10 @@
       "src": "./img/icons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src":"../public/ninja.png",
+      "type":"image.png"
     }
   ],
   "start_url": "./index.html",

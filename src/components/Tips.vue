@@ -1,6 +1,6 @@
 <template>
   <b-card :title="info.titles[index]">
-    <b-card-text class="breaks">
+    <b-card-text class="breaks text-left">
       {{ info.tips[index] }}
     </b-card-text>
   </b-card>
@@ -13,7 +13,7 @@ export default {
     return {
       info: {
         titles: [
-          "Subjects",
+          "Subject",
           "Topic",
           "Must Include",
           "Exclude",
@@ -39,6 +39,6 @@ export default {
 
 <style scoped>
 .breaks {
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
 </style>

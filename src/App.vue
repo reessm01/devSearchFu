@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <b-navbar type="dark" variant="dark">
-      <b-navbar-brand href="/">
+      <b-navbar-brand href="/" class="mx-auto">
         <img src="@/assets/ninja.png" class="image" />
-        <b-nav-text>DevSearchFu</b-nav-text>
       </b-navbar-brand>
+      <!-- <b-navbar-nav>
+        <b-nav-item href="/about">About</b-nav-item>
+        </b-navbar-nav> -->
     </b-navbar>
     <router-view />
   </div>
@@ -20,13 +22,8 @@
 }
 
 .image {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.5rem;
-}
-
-.navbar.navbar-dark.bg-dark.navbar-expand {
-  padding-top: 0rem !important;
-  padding-bottom: 0rem !important;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem 1rem 0.5rem 0.5rem;
 }
 </style>
