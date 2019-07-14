@@ -3,10 +3,10 @@
     <h5>Your search ends here...</h5>
     <b-container fluid>
       <b-row>
-        <b-col>
+        <b-col md="7">
           <Search />
         </b-col>
-        <b-col md>
+        <b-col md="5">
           <Tips />
         </b-col>
       </b-row>

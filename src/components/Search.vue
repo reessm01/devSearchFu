@@ -15,6 +15,7 @@
           placeholder="Python, Javascript, etc."
           v-model="form.tech"
           autofocus
+          @focus="changeTip(0)"
         />
       </b-form-group>
       <b-form-group
@@ -30,6 +31,7 @@
           id="topic"
           placeholder="What do you want to know?"
           v-model="form.topic"
+          @focus="changeTip(1)"
         />
       </b-form-group>
       <b-form-group
@@ -44,6 +46,7 @@
           id="emphasis"
           placeholder="Optional: must have keywords or phrases separated by commas. USE SPARINGLY."
           v-model="form.includes"
+          @focus="changeTip(2)"
         />
       </b-form-group>
       <b-form-group
@@ -58,6 +61,7 @@
           id="exclude"
           placeholder="Optional: exclude these keywords or phrases separated by commas."
           v-model="form.excludes"
+          @focus="changeTip(3)"
         />
       </b-form-group>
       <b-form-group
@@ -72,6 +76,7 @@
           id="site"
           placeholder="Optional: refine your search to search a specific site."
           v-model="form.site"
+          @focus="changeTip(4)"
         />
       </b-form-group>
 
@@ -88,6 +93,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "Search",
   data() {
@@ -102,6 +108,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["changeTip"]),
     onReset() {
       this.form.tech = "";
       this.form.topic = "";
@@ -152,6 +159,11 @@ export default {
           .join("+");
         window.open(baseURL + searchParameters);
       }
+    }
+  },
+  computed: {
+    index() {
+      return this.$store.state.index;
     }
   }
 };
