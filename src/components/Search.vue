@@ -83,7 +83,7 @@
       <b-button type="reset" variant="secondary" v-on:click.prevent="onReset"
         >Reset</b-button
       >
-      <b-button type="submit" variant="dark" v-on:click="runSearch"
+      <b-button type="submit" variant="dark" v-on:click.prevent="runSearch"
         >Search</b-button
       >
     </b-button-toolbar>
@@ -117,8 +117,25 @@ export default {
     runSearch() {
       if (this.form.tech && this.form.topic) {
         const baseURL = "https://www.google.com/search?q=";
-        let basicParameters = [this.form.tech, this.form.topic]
-          .map(string => string.split(" ").join("+"))
+        let subject = this.form.tech
+          .split(",")
+          .filter(entry => entry !== "")
+          .map(string =>
+            string
+              .trim()
+              .split(" ")
+              .join("+")
+          )
+          .join("+");
+        let topic = this.form.topic
+          .split(",")
+          .filter(entry => entry !== "")
+          .map(string =>
+            string
+              .trim()
+              .split(" ")
+              .join("+")
+          )
           .join("+");
         let mustInclude = this.form.includes
           .split(",")
@@ -140,7 +157,7 @@ export default {
               .split(" ")
               .join("+")
           )
-          .map(string => "-" + string)
+          .map(string => '-"' + string + '"')
           .join("+");
         let siteSearch = this.form.site
           .split(",")
@@ -149,7 +166,8 @@ export default {
 
         let searchParameters = [
           siteSearch,
-          basicParameters,
+          subject,
+          topic,
           mustInclude,
           mustExclude
         ]
