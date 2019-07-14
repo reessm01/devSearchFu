@@ -1,26 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/ninja.png" class="image" />
-    <Search />
+    <h5>Your search ends here...</h5>
+    <b-container fluid>
+      <b-row>
+        <b-col>
+          <Search />
+        </b-col>
+        <b-col md>
+          <Tips />
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Search from "@/components/Search.vue";
+import Tips from "@/components/Tips.vue";
 
 export default {
   name: "home",
   components: {
-    Search
+    Search,
+    Tips
   }
 };
 </script>
 
 <style scoped>
-.image {
-  width: 200px;
-  height: auto;
+h5 {
   margin: 1rem;
 }
 </style>

@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <!-- <router-link to="/about">About</router-link> -->
-    </div>
+    <b-navbar type="dark" variant="dark">
+      <b-navbar-brand href="/">
+        <img src="@/assets/ninja.png" class="image" />
+        <b-nav-text>DevSearchFu</b-nav-text>
+      </b-navbar-brand>
+    </b-navbar>
     <router-view />
   </div>
 </template>
@@ -16,14 +18,15 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+.image {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.navbar.navbar-dark.bg-dark.navbar-expand {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
 }
 </style>

@@ -3,17 +3,18 @@
     <b-form>
       <b-form-group
         id="input-group-1"
-        label="Tech"
-        label-for="tech"
+        label="Subject"
+        label-for="Subject"
         label-size="sm"
         label-align="left"
         class="m-2"
       >
         <b-form-input
           required
-          id="tech"
+          id="Subject"
           placeholder="Python, Javascript, etc."
           v-model="form.tech"
+          autofocus
         />
       </b-form-group>
       <b-form-group
@@ -41,7 +42,7 @@
       >
         <b-form-input
           id="emphasis"
-          placeholder="Optional: refine your search with must have keywords. USE SPARINGLY."
+          placeholder="Optional: must have keywords or phrases separated by commas. USE SPARINGLY."
           v-model="form.includes"
         />
       </b-form-group>
@@ -55,7 +56,7 @@
       >
         <b-form-input
           id="exclude"
-          placeholder="Optional: refine your search to exclude these keywords."
+          placeholder="Optional: exclude these keywords or phrases separated by commas."
           v-model="form.excludes"
         />
       </b-form-group>
@@ -73,23 +74,15 @@
           v-model="form.site"
         />
       </b-form-group>
-      <b-container fluid>
-        <b-row align-h="between">
-          <b-col cols="2" class="coll">
-            <b-button
-              type="reset"
-              variant="secondary"
-              v-on:click.prevent="onReset"
-              >Reset</b-button
-            >
-          </b-col>
-          <b-col cols="2">
-            <b-button type="submit" variant="primary" v-on:click="runSearch"
-              >Search</b-button
-            >
-          </b-col>
-        </b-row>
-      </b-container>
+
+      <b-button-toolbar justify class="toolbar">
+        <b-button type="reset" variant="secondary" v-on:click.prevent="onReset"
+          >Reset</b-button
+        >
+        <b-button type="submit" variant="primary" v-on:click="runSearch"
+          >Search</b-button
+        >
+      </b-button-toolbar>
     </b-form>
   </b-card>
 </template>
@@ -119,10 +112,45 @@ export default {
     runSearch() {
       if (this.form.tech && this.form.topic) {
         const baseURL = "https://www.google.com/search?q=";
-        let parameters = [this.form.tech, this.form.topic]
+        let basicParameters = [this.form.tech, this.form.topic]
           .map(string => string.split(" ").join("+"))
           .join("+");
-        window.open(baseURL + parameters);
+        let mustInclude = this.form.includes
+          .split(",")
+          .filter(entry => entry !== "")
+          .map(string =>
+            string
+              .trim()
+              .split(" ")
+              .join("+")
+          )
+          .map(string => '"' + string + '"')
+          .join("+");
+        let mustExclude = this.form.excludes
+          .split(",")
+          .filter(entry => entry !== "")
+          .map(string =>
+            string
+              .trim()
+              .split(" ")
+              .join("+")
+          )
+          .map(string => "-" + string)
+          .join("+");
+        let siteSearch = this.form.site
+          .split(",")
+          .filter(entry => entry !== "")
+          .map(string => "site:" + string)[0];
+
+        let searchParameters = [
+          siteSearch,
+          basicParameters,
+          mustInclude,
+          mustExclude
+        ]
+          .filter(entry => entry !== "")
+          .join("+");
+        window.open(baseURL + searchParameters);
       }
     }
   }
@@ -131,18 +159,21 @@ export default {
 
 <style>
 .col-form-label-sm {
-  font-size: 0.7rem !important;
+  font-size: 1rem !important;
 }
 .form-control {
-  font-size: 0.7rem !important;
+  font-size: 1rem !important;
 }
 .container {
   width: 50rem;
 }
 .btn.btn-primary {
-  font-size: 0.7rem !important;
+  font-size: 1rem !important;
 }
 .btn.btn-secondary {
-  font-size: 0.7rem !important;
+  font-size: 1rem !important;
+}
+.toolbar {
+  padding: 10px;
 }
 </style>
