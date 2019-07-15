@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/devSearchFu/precache-manifest.2152ce59b751edd3e0f353335d5cd72e.js"
+  "/devSearchFu/precache-manifest.d28b298058bd10f5e90cfc00e00f84d5.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "devsearchfu"});
