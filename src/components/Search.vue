@@ -191,6 +191,7 @@ export default {
       var regex = new RegExp(expression);
       if (this.form.site != "") {
         if (this.form.site.match(regex)) {
+          this.$refs["site"].setCustomValidity("");
           this.valid = true;
           return true;
         } else {
@@ -199,6 +200,7 @@ export default {
         }
       } else {
         this.valid = true;
+        this.$refs["site"].setCustomValidity("");
       }
     }
   },
