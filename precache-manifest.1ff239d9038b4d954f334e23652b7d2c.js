@@ -4,27 +4,27 @@ self.__precacheManifest = [
     "url": "/devSearchFu/js/about.498fc197.js"
   },
   {
-    "revision": "9295c047a032b7672521",
+    "revision": "7ffbe7ba310383049f5d",
     "url": "/devSearchFu/css/app.0ff0c0bb.css"
   },
   {
-    "revision": "9295c047a032b7672521",
-    "url": "/devSearchFu/js/app.dcbd41ff.js"
+    "revision": "7ffbe7ba310383049f5d",
+    "url": "/devSearchFu/js/app.0853c3b6.js"
   },
   {
-    "revision": "2809c4482c03f5b7a281",
+    "revision": "7535e7d363e65e9b050b",
     "url": "/devSearchFu/css/chunk-vendors.3a837761.css"
   },
   {
-    "revision": "2809c4482c03f5b7a281",
-    "url": "/devSearchFu/js/chunk-vendors.d7a93a8c.js"
+    "revision": "7535e7d363e65e9b050b",
+    "url": "/devSearchFu/js/chunk-vendors.9384d0ff.js"
   },
   {
     "revision": "22d5398e83e8ab7eee1c19bb95bf5a78",
     "url": "/devSearchFu/img/ninja.22d5398e.png"
   },
   {
-    "revision": "3a0d90b204d5e8d0583297adbfb1532f",
+    "revision": "92c68491d25354697889d68207431d9f",
     "url": "/devSearchFu/index.html"
   },
   {
