@@ -232,7 +232,7 @@ export default {
   margin: 0rem !important;
 }
 .form {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.13);
   margin-bottom: 2rem;
   padding: 2rem;
 }

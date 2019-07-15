@@ -30,9 +30,9 @@ export default {
 
 <style scoped>
 .home {
-  padding: 2rem;
+  padding: 0.25rem;
 }
 h3 {
-  margin-bottom: 2rem;
+  margin:1.5rem;
 }
 </style>
