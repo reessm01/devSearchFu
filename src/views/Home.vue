@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <h3>Your search ends here...</h3>
+    <!-- <h3>Your search ends here...</h3> -->
     <b-container fluid>
       <b-row>
-        <b-col md="7">
+        <b-col>
           <Search />
         </b-col>
-        <b-col md="5">
+        <!-- <b-col md="5">
           <Tips />
-        </b-col>
+        </b-col> -->
       </b-row>
     </b-container>
   </div>
